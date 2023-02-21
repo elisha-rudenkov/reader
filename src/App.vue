@@ -1,30 +1,128 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <router-view />
 </template>
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  methods: {
+    
+  },
+  computed: {},
+  
+  unmounted() {},
+  setup() {
+    return {};
+  },
+});
+</script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap");
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 850px;
+  margin: 0 auto;
+  
 }
 
-nav {
-  padding: 30px;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+:root {
+  --bg: #ffffff;
+  --text-color: #000;
+
+
+}
+
+.dark-theme {
+  --bg: #191a23;
+  --text-color: #fff;
+}
+
+
+#file-upload {
+  display: none !important;
+}
+
+#app {
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text-color);
+}
+.outlined-btn{
+  all: unset;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+  max-width: 280px;
+  color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+
+  &:hover{
+    background: var(--bg);
+    color: var(--text-color);
   }
 }
+.gradient-btn {
+  all: unset;
+  cursor: pointer;
+  box-sizing: border-box;
+  background: linear-gradient(
+    270deg,
+    #de2cae 0%,
+    #ee7384 31.77%,
+    #f07e7e 61.98%,
+    #fbaf61 77.08%,
+    #febe58 100%
+  );
+  border-radius: 5px;
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+  max-width: 280px;
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.gradient-btn-inactive {
+  background: #8b8b8b !important;
+  cursor: not-allowed;
+  transition: all 0.3s ease-in-out;
+}
+
+
 </style>
