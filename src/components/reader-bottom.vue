@@ -379,6 +379,22 @@ select {
     padding: 3px 9px;
     color: #ffffff;
   }
+
+  select{
+    color: var(--text-color);
+
+    option{
+      color: var(--text-color);
+      background: var(--bg);
+
+      padding: 10px 0;
+    }
+  }
+
+  svg{
+    stroke: var(--text-color);
+
+  }
 }
 
 .controls {

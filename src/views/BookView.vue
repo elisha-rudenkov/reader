@@ -41,6 +41,7 @@
       <h4>{{ book.author["first-name"] }} {{ book.author["last-name"] }}</h4>
       <h2>{{ current_chapter.title.p }}</h2>
       <p
+        class="noselect"
         :style="{
           fontSize: $store.state.text_font_size + 'px',
           lineHeight: $store.state.text_line_height,
@@ -379,7 +380,6 @@ b {
 
   background: var(--bg);
   color: var(--text-color);
-  overflow-y: scroll;
   //hide scrollbar
 
   &::-webkit-scrollbar {
