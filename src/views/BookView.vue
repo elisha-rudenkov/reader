@@ -46,7 +46,7 @@
           fontSize: $store.state.text_font_size + 'px',
           lineHeight: $store.state.text_line_height,
           fontFamily: $store.state.text_font,
-          padding: $store.state.text_padding + 'px !important',
+          padding: '0 ' + $store.state.text_padding + 'px !important',
         }"
         v-for="(paragraph, index) in current_chapter.text"
         :key="index"

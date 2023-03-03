@@ -54,17 +54,18 @@ export default createStore({
       state.text_settings_visible = text_settings_visible;
     },
     setTextPadding(state: State, text_padding: number) {
-      state.text_padding = state.text_padding + text_padding;
+      state.text_padding = text_padding;
     },
     setTextFont(state: State, text_font: string) {
       state.text_font = text_font;
     },
     setTextFontSize(state: State, text_font_size: number) {
-      state.text_font_size = state.text_font_size + text_font_size;
+      state.text_font_size = text_font_size;
     },
     setTextLineHeight(state: State, text_line_height: number) {
-      state.text_line_height = state.text_line_height + text_line_height;
+      state.text_line_height =  text_line_height;
     },
+
     resetAllTextSettings(state: State) {
       state.text_padding = 0;
       state.text_font = "Poppins, sans-serif";
@@ -74,7 +75,7 @@ export default createStore({
 
     toggleTheme(state) {
       console.log("toggleTheme");
-      
+
       if (state.theme === "light") {
         document.body.classList.add("dark-theme");
         state.theme = "dark";

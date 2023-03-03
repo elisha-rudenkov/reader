@@ -161,6 +161,9 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+//firestore doc update
+import { db, auth } from "@/main";
+import { updateDoc, doc, collection } from "@firebase/firestore";
 export default defineComponent({
   data() {
     return {};
@@ -187,18 +190,59 @@ export default defineComponent({
     },
     updatePadding(value: number) {
       if (this.$store.state.text_padding + value < 0) return;
+      this.$store.commit("setTextPadding", this.$store.state.text_padding + value);
+      //save to Firestore
 
-      this.$store.commit("setTextPadding", value);
+      let book_id = this.$route.params.id.toString();
+      console.log(`book id: ${book_id}`);
+      
+      if (book_id.startsWith("local_")) return;
+
+      let user = auth.currentUser;
+      if (user) {
+        let docRef = doc(collection(db, `users`), user.uid);
+        updateDoc(docRef, {
+          text_padding: this.$store.state.text_padding,
+        });
+      }
+
+
+     
     },
     updateLineHeight(value: number) {
       if (this.$store.state.text_line_height + value < 1) return;
 
-      this.$store.commit("setTextLineHeight", value);
+      this.$store.commit("setTextLineHeight", this.$store.state.text_line_height + value);
+
+      //save to Firestore
+      let book_id = this.$route.params.id.toString();
+      if (book_id.startsWith("local_")) return;
+
+      let user = auth.currentUser;
+      if (user) {
+        let docRef = doc(collection(db, `users`), user.uid);
+        updateDoc(docRef, {
+          text_line_height: this.$store.state.text_line_height,
+        });
+      }
     },
     updateFontSize(value: number) {
       if (this.$store.state.text_font_size + value < 1) return;
 
-      this.$store.commit("setTextFontSize", value);
+      this.$store.commit("setTextFontSize", this.$store.state.text_font_size + value);
+
+      //save to Firestore
+      let book_id = this.$route.params.id.toString();
+      if (book_id.startsWith("local_")) return;
+
+      let user = auth.currentUser;
+      if (user) {
+        let docRef = doc(collection(db, `users`), user.uid);
+        updateDoc(docRef, {
+          text_font_size: this.$store.state.text_font_size,
+        });
+      }
+
     },
   },
   computed: {
