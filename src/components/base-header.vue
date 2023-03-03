@@ -1,8 +1,7 @@
 <template>
   <div class="header">
     <div class="user">
-      <img :src="img_url" @click="openLogout() "  alt="user" />
-
+      <img :src="img_url" @click="openLogout()" alt="user" />
     </div>
     <div class="logo">
       <img src="../assets/logo-png.png" alt="" />
@@ -14,11 +13,7 @@
 import { defineComponent } from "vue";
 import { auth } from "@/main";
 export default defineComponent({
-  props: {
-    user_img_url: String,
-  },
   methods: {
-    
     openLogout() {
       if (auth.currentUser) {
         this.$store.state.signout_visible = true;
@@ -27,7 +22,7 @@ export default defineComponent({
   },
   computed: {
     img_url(): string {
-      if (this.$store.state.user.photoURL) {
+      if (this.$store.state.user && this.$store.state.user.photoURL) {
         return this.$store.state.user.photoURL;
       } else {
         //get random number

@@ -94,7 +94,10 @@
     >
 
     <addBookModal v-show="$store.state.adding_book"></addBookModal>
-    <baseHeader :user_img_url="$store.state.user?.user_img_url"></baseHeader>
+
+    <baseHeader
+      
+    ></baseHeader>
 
     <Transition name="main">
       <div class="hello" v-show="!test_visibility">
@@ -193,7 +196,9 @@ export default defineComponent({
         let temp = doc.data();
         temp.id = doc.id;
         //check if the book is already in the library
-        let book = this.$store.state.books.find((book: any) => book.id == temp.id);
+        let book = this.$store.state.books.find(
+          (book: any) => book.id == temp.id
+        );
         if (!book) {
           this.$store.commit("addBook", temp);
         }
