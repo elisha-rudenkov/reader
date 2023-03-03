@@ -63,7 +63,7 @@ export default createStore({
       state.text_font_size = text_font_size;
     },
     setTextLineHeight(state: State, text_line_height: number) {
-      state.text_line_height =  text_line_height;
+      state.text_line_height = text_line_height;
     },
 
     resetAllTextSettings(state: State) {
@@ -78,11 +78,13 @@ export default createStore({
 
       if (state.theme === "light") {
         document.body.classList.add("dark-theme");
+
         state.theme = "dark";
         //save to local storage
         localStorage.setItem("theme", "dark");
       } else {
         document.body.classList.remove("dark-theme");
+
         state.theme = "light";
         //save to local storage
         localStorage.setItem("theme", "light");

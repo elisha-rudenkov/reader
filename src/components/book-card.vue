@@ -131,9 +131,10 @@ export default defineComponent({
 
     font-size: 23px;
     line-height: 27px;
+    margin-bottom: 20px;
     /* identical to box height */
 
-    color: #000000;
+    color: var(--text-color);
   }
 
   #author {
@@ -141,7 +142,7 @@ export default defineComponent({
     font-size: 18px;
     line-height: 24px;
     /* identical to box height */
-
+    margin-bottom: 10px;
     color: #bbbbbb;
   }
 

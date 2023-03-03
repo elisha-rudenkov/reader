@@ -108,8 +108,8 @@ body {
 }
 
 .dark-theme {
-  --bg: #191a23;
-  --text-color: #fff;
+  --bg: #191a23 !important;
+  --text-color: #fff !important;
 }
 
 #file-upload {

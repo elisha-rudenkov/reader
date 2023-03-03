@@ -44,7 +44,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .header {
-  background-color: #ffffff;
+  background-color: var(--bg);
   padding: 20px;
   display: flex;
   justify-content: space-between;

@@ -190,12 +190,15 @@ export default defineComponent({
     },
     updatePadding(value: number) {
       if (this.$store.state.text_padding + value < 0) return;
-      this.$store.commit("setTextPadding", this.$store.state.text_padding + value);
+      this.$store.commit(
+        "setTextPadding",
+        this.$store.state.text_padding + value
+      );
       //save to Firestore
 
       let book_id = this.$route.params.id.toString();
       console.log(`book id: ${book_id}`);
-      
+
       if (book_id.startsWith("local_")) return;
 
       let user = auth.currentUser;
@@ -205,14 +208,14 @@ export default defineComponent({
           text_padding: this.$store.state.text_padding,
         });
       }
-
-
-     
     },
     updateLineHeight(value: number) {
       if (this.$store.state.text_line_height + value < 1) return;
 
-      this.$store.commit("setTextLineHeight", this.$store.state.text_line_height + value);
+      this.$store.commit(
+        "setTextLineHeight",
+        this.$store.state.text_line_height + value
+      );
 
       //save to Firestore
       let book_id = this.$route.params.id.toString();
@@ -229,7 +232,10 @@ export default defineComponent({
     updateFontSize(value: number) {
       if (this.$store.state.text_font_size + value < 1) return;
 
-      this.$store.commit("setTextFontSize", this.$store.state.text_font_size + value);
+      this.$store.commit(
+        "setTextFontSize",
+        this.$store.state.text_font_size + value
+      );
 
       //save to Firestore
       let book_id = this.$route.params.id.toString();
@@ -242,7 +248,6 @@ export default defineComponent({
           text_font_size: this.$store.state.text_font_size,
         });
       }
-
     },
   },
   computed: {
@@ -424,10 +429,10 @@ select {
     color: #ffffff;
   }
 
-  select{
+  select {
     color: var(--text-color);
 
-    option{
+    option {
       color: var(--text-color);
       background: var(--bg);
 
@@ -435,9 +440,8 @@ select {
     }
   }
 
-  svg{
+  svg {
     stroke: var(--text-color);
-
   }
 }
 
@@ -490,8 +494,4 @@ select {
   font-size: 15px;
   width: 100%;
 }
-
-
-
-
 </style>

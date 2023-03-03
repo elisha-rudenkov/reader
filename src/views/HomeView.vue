@@ -311,7 +311,7 @@ export default defineComponent({
   align-items: center;
   height: 100%;
   width: 100%;
-  background-color: #ffffff;
+  background-color: var(--bg);
   padding: 0 20px;
   box-sizing: border-box;
   padding-top: 6rem;
@@ -325,7 +325,7 @@ export default defineComponent({
   left: 0;
   bottom: 0;
   z-index: 1;
-  background: #ffffff;
+  background: var(--bg);
 
   display: flex;
   flex-direction: column;
@@ -352,7 +352,7 @@ export default defineComponent({
     line-height: 54px;
     /* identical to box height */
     text-align: left;
-    color: #000000;
+    color: var(--text-color);
   }
 
   p {
@@ -385,7 +385,7 @@ export default defineComponent({
     width: 100%;
     padding: 10px 20px;
 
-    border: 1px solid #000000;
+    border: 1px solid var(--text-color);
     box-sizing: border-box;
     border-radius: 5px;
 
@@ -394,7 +394,7 @@ export default defineComponent({
     line-height: 27px;
     /* identical to box height */
 
-    color: #000000;
+    color: var(--text-color);
 
     svg {
       width: 24px;
@@ -412,13 +412,13 @@ export default defineComponent({
     font-size: 18px;
     line-height: 27px;
 
-    color: #000000;
+    color: var(--text-color);
 
     .line {
       width: 50%;
       max-width: 100px;
       height: 2px;
-      background: #000000;
+      background: var(--text-color);
     }
   }
 }
@@ -470,7 +470,7 @@ export default defineComponent({
     line-height: 54px;
     /* identical to box height */
 
-    color: #000000;
+    color: var(--text-color);
   }
 
   p {
@@ -514,7 +514,7 @@ export default defineComponent({
     line-height: 36px;
     /* identical to box height */
     margin: 1rem 0;
-    color: #000000;
+    color: var(--text-color);
   }
 }
 
@@ -533,7 +533,7 @@ export default defineComponent({
   left: 0;
   bottom: 0;
   z-index: 1;
-  background: #ffffff;
+  background: var(--bg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -542,8 +542,8 @@ export default defineComponent({
   .signout {
     padding: 15px;
     border-radius: 5px;
-    background: #ffffff;
-    color: #000000;
+    background: var(--bg);
+    color: var(--text-color);
     font-weight: 500;
     font-size: 18px;
     line-height: 27px;
@@ -561,7 +561,7 @@ export default defineComponent({
       line-height: 24px;
       /* identical to box height */
 
-      color: #000000;
+      color: var(--text-color);
     }
   }
 }
