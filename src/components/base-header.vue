@@ -27,8 +27,8 @@ export default defineComponent({
   },
   computed: {
     img_url(): string {
-      if (this.user_img_url) {
-        return this.user_img_url;
+      if (this.$store.state.user.photoURL) {
+        return this.$store.state.user.photoURL;
       } else {
         //get random number
         let random_num = Math.random();
