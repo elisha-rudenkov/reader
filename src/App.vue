@@ -85,11 +85,15 @@ body {
   background: var(--bg);
 
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   max-width: 850px;
   margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .noselect {
